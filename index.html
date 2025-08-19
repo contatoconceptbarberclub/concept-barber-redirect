@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Concept Barber Club - Redirecionamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      var iosLink = "https://apps.apple.com/us/app/concept-barber-club/id6748962691";
+      var androidLink = "https://play.google.com/store/apps/details?id=conceptbarberclub.bestbarbers.app";
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = androidLink;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = iosLink;
+      } else {
+        // Caso o sistema não seja identificado
+        document.getElementById("manual-links").style.display = "block";
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    #manual-links {
+      display: none;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Redirecionando para o aplicativo...</h1>
+  <p>Se não for redirecionado automaticamente, escolha abaixo:</p>
+  <div id="manual-links">
+    <p><a href="https://apps.apple.com/us/app/concept-barber-club/id6748962691" target="_blank">Acessar na App Store (iOS)</a></p>
+    <p><a href="https://play.google.com/store/apps/details?id=conceptbarberclub.bestbarbers.app" target="_blank">Acessar na Google Play (Android)</a></p>
+  </div>
+</body>
+</html>
